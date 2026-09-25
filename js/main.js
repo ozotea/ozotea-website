@@ -382,7 +382,7 @@
     const data = new FormData(form);
     const needs = data.getAll("need").join(", ") || "Not specified";
     const body = `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nNeeds: ${needs}\nBudget: ${data.get("budget")}\n\n${data.get("message")}`;
-    window.location.href = `mailto:hello@ozotea.com?subject=${encodeURIComponent("New project enquiry")}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:ozotea.opc@gmail.com?subject=${encodeURIComponent("New project enquiry")}&body=${encodeURIComponent(body)}`;
     status.classList.remove("is-error");
     status.textContent = "Thanks! Your email app should open now — we’ll reply within 12 hours.";
     form.reset();
