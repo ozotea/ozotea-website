@@ -1,0 +1,11 @@
+{
+  "name": "ozotea-website",
+  "private": true,
+  "scripts": {
+    "dev": "live-server --port=5173 --no-browser --ignore=node_modules",
+    "start": "live-server --port=5173 --ignore=node_modules"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
