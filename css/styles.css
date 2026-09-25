@@ -1258,3 +1258,5 @@ body.modal-open { overflow: hidden; }
   .legal__toc ol { grid-template-columns: 1fr; }
   .legal__body h2 { font-size: 21px; }
 }
+.legal__contact address { font-style: normal; color: var(--text-2); }
+.legal__contact code { font-family: var(--mono); font-size: 14px; color: var(--text-2); }
