@@ -37,7 +37,7 @@ Edit `js/data.js` — no HTML changes needed.
 
 Hosted on **GitHub Pages** from the `main` branch of
 [ozotea/ozotea-website](https://github.com/ozotea/ozotea-website), served at
-**https://www.ozotea.com** (the bare `ozotea.com` redirects there).
+**https://ozotea.com** (`www.ozotea.com` redirects there).
 
 **To publish a change:** commit and push to `main`. GitHub Pages redeploys
 automatically, usually within a minute. Check progress under the repo's
@@ -49,7 +49,8 @@ git commit -m "Describe the change"
 git push
 ```
 
-- `CNAME` holds the custom domain. Don't delete it, or the site falls back to `ozotea.github.io`.
+- `CNAME` holds the custom domain (`ozotea.com`). Don't delete it, or the site falls back to `ozotea.github.io`.
+- Visitor stats: Cloudflare Web Analytics (cookieless). Paste the site token into `js/analytics.js`.
 - `.nojekyll` tells Pages to serve files as-is (no Jekyll processing).
 
 ### DNS (GoDaddy → ozotea.com → DNS)
