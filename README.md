@@ -27,11 +27,12 @@ Edit `js/data.js` — no HTML changes needed.
   `phoneHTML()` output in `main.js` with an `<img>` inside `.phone`.
 - **Brand colours:** change `--accent` / `--accent-2` in `:root` in `styles.css`.
 
-## Before going live
-- Replace dummy projects, testimonials, stats (`data-count` in `index.html`) and client names in the logo marquee.
-- Replace `hello@ozotea.com` and the phone number.
-- Hook the contact form to a backend (Formspree, Netlify Forms, or your API) — it currently opens the visitor's email client.
+## Still to do
+- Replace the placeholder stats row (`data-count` values in `index.html`).
+- Confirm `hello@ozotea.com` and add the real phone number.
+- Connect the contact form to a backend (e.g. Formspree); it currently opens the visitor's email app.
 - Add real social links in the footer.
+- Add real client testimonials to `testimonials` in `js/data.js` (the section stays hidden while empty).
 
 ## Deploy (live site)
 
