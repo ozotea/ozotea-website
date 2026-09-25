@@ -33,5 +33,34 @@ Edit `js/data.js` — no HTML changes needed.
 - Hook the contact form to a backend (Formspree, Netlify Forms, or your API) — it currently opens the visitor's email client.
 - Add real social links in the footer.
 
-## Deploy
-Upload the folder as-is to Netlify, Vercel, Cloudflare Pages, GitHub Pages or any static host.
+## Deploy (live site)
+
+Hosted on **GitHub Pages** from the `main` branch of
+[ozotea/ozotea-website](https://github.com/ozotea/ozotea-website), served at
+**https://www.ozotea.com** (the bare `ozotea.com` redirects there).
+
+**To publish a change:** commit and push to `main`. GitHub Pages redeploys
+automatically, usually within a minute. Check progress under the repo's
+**Actions** tab ("pages build and deployment").
+
+```bash
+git add -A
+git commit -m "Describe the change"
+git push
+```
+
+- `CNAME` holds the custom domain. Don't delete it, or the site falls back to `ozotea.github.io`.
+- `.nojekyll` tells Pages to serve files as-is (no Jekyll processing).
+
+### DNS (GoDaddy → ozotea.com → DNS)
+
+| Type  | Name | Value                |
+|-------|------|----------------------|
+| A     | @    | 185.199.108.153      |
+| A     | @    | 185.199.109.153      |
+| A     | @    | 185.199.110.153      |
+| A     | @    | 185.199.111.153      |
+| CNAME | www  | ozotea.github.io     |
+
+Remove any other `A` record on `@` (GoDaddy's default "Parked") and any
+existing `www` record, or GitHub can't issue the HTTPS certificate.
