@@ -992,10 +992,51 @@ body.modal-open { overflow: hidden; }
 }
 .hero.is-lit .hero__spot { opacity: 1; }
 .hero__visual { perspective: 1200px; }
-.hero__tilt { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 0.6s var(--ease); }
+.hero__tilt { position: absolute; inset: 0; z-index: 1; transform-style: preserve-3d; transition: transform 0.12s linear; }
+.hero__visual .float-card { z-index: 5; }
+.hero__visual:has(.hero__tilt) { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.hero__visual.is-dragging { cursor: grabbing; }
+
+/* Solid 3D phones: stacked body layers + back face + screen (built in effects.js) */
+.hero__visual .phone3d { position: absolute; width: 260px; aspect-ratio: 9 / 19.2; transform-style: preserve-3d; }
 .hero__tilt .phone--front { transform: translateZ(40px) rotate(4deg); }
-.hero__tilt .phone--back { transform: translateZ(-30px) rotate(-7deg) scale(0.9); }
-.hero__tilt .float-card { transform: translateZ(90px); }
+.hero__tilt .phone--back { transform: translateZ(-30px) rotate(-7deg) scale(0.9); opacity: 1; }
+.hero__visual .phone3d > .phone { position: absolute; inset: 0; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.phone3d__layer {
+  position: absolute; inset: 0; border-radius: 42px;
+  background: linear-gradient(145deg, #57506a, #221f2c 45%, #3b3548);
+}
+.phone3d__back {
+  position: absolute; inset: 0; border-radius: 42px; display: grid; place-items: center;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  background:
+    radial-gradient(120% 60% at 30% 10%, rgba(155,107,255,0.28), transparent 60%),
+    linear-gradient(160deg, #2b2340, #151120 55%, #0e0c14);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1) inset, 0 40px 80px -30px rgba(0,0,0,0.9);
+}
+.phone3d__back img { width: 56%; opacity: 0.92; }
+.phone3d__cam {
+  position: absolute; top: 20px; left: 20px; width: 84px; height: 84px; padding: 10px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 7px; border-radius: 24px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 6px 16px -6px rgba(0,0,0,0.8);
+}
+.phone3d__cam i { border-radius: 50%; background: radial-gradient(circle at 35% 35%, #4a4668, #07060c 62%); box-shadow: 0 0 0 3px #1c1926; }
+
+.hero__hint {
+  position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); z-index: 5;
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px;
+  font-family: var(--mono); font-size: 12px; color: var(--text-2); white-space: nowrap; pointer-events: none;
+  background: rgba(8,7,11,0.7); border: 1px solid var(--line-2); backdrop-filter: blur(8px);
+  transition: opacity 0.5s;
+}
+.hero__hint span { display: inline-block; color: var(--accent); font-size: 14px; animation: hintSpin 2.4s var(--ease) infinite; }
+.hero__hint.is-used { opacity: 0; }
+@keyframes hintSpin { 0%, 40% { transform: rotate(0); } 100% { transform: rotate(-360deg); } }
+@media (max-width: 600px) {
+  .hero__visual .phone3d { width: 210px; }
+  .phone3d__cam { width: 68px; height: 68px; padding: 8px; gap: 5px; top: 16px; left: 16px; }
+}
 
 /* Work phone tilt */
 .work-panel__visual .phone { transition: transform 0.5s var(--ease); will-change: transform; }
@@ -1225,6 +1266,13 @@ body.modal-open { overflow: hidden; }
 }
 .legal__toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--mono); font-size: 11px; color: var(--text-3); padding-top: 2px; }
 .legal__toc a:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+.legal__toc a { position: relative; }
+.legal__toc a.is-active { color: #e2d4ff; background: var(--accent-soft); }
+.legal__toc a.is-active::before { color: var(--accent); }
+.legal__toc a.is-active::after {
+  content: ""; position: absolute; left: -8px; top: 8px; bottom: 8px; width: 3px; border-radius: 3px;
+  background: var(--accent); box-shadow: 0 0 10px var(--accent);
+}
 
 .legal__body { max-width: 720px; counter-reset: sec; }
 .legal__body section { counter-increment: sec; padding: 30px 0; border-top: 1px solid var(--line); scroll-margin-top: 90px; }

@@ -16,4 +16,30 @@
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* Scrollspy: highlight the "On this page" link for the section being read */
+  const links = [...document.querySelectorAll(".legal__toc a")];
+  const sections = links.map((a) => document.querySelector(a.getAttribute("href")));
+  if (links.length) {
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const line = window.innerHeight * 0.3;
+      let active = 0;
+      sections.forEach((sec, i) => { if (sec && sec.getBoundingClientRect().top <= line) active = i; });
+      // At the very bottom, the last (short) section can't reach the line, so select it.
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) active = sections.length - 1;
+      links.forEach((a, i) => {
+        a.classList.toggle("is-active", i === active);
+        if (i === active) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+      });
+    };
+    const schedule = () => { if (!raf) raf = requestAnimationFrame(update); };
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    // Anchor jumps (clicking the list, or opening a #section link) update immediately.
+    window.addEventListener("hashchange", update);
+    window.addEventListener("load", update);
+    update();
+  }
 })();
