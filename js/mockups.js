@@ -40,7 +40,21 @@ window.OZ_MOCKUPS = {
             <div class="ex__in"><small>↓ Income</small><b>₹2,94,678</b></div>
             <div class="ex__out"><small>↑ Expenses</small><b>₹2,65,383</b></div>
           </div>
-          <div class="ex__ai"><b>✦ Your Aug’26 summary is ready</b><span>₹3,03,875 in incoming, ₹17,711 more than July</span></div>`;
+          <div class="ex__ai"><b>✦ Your Aug’26 summary is ready</b><span>₹3,03,875 in incoming, ₹17,711 more than July</span></div>
+          <div class="ex__label">Recent transactions <em>See all</em></div>
+          <div class="ex__card"><ul class="ex__tx">
+            <li><b></b><div><p>Swiggy</p><small>Food · Today, 1:12 pm · auto-captured</small></div><em class="out">-₹486</em></li>
+            <li><b></b><div><p>Salary · Acme Corp</p><small>Income · 1 Sep</small></div><em class="in">+₹92,000</em></li>
+            <li><b></b><div><p>Amazon</p><small>Shopping · 31 Aug · HDFC card</small></div><em class="out">-₹2,349</em></li>
+            <li><b></b><div><p>Electricity bill</p><small>Bills · 30 Aug · UPI</small></div><em class="out">-₹1,860</em></li>
+          </ul></div>
+          <div class="ex__label">Budgets <em>September</em></div>
+          <div class="ex__card ex__budgets">
+            <div><p>Food &amp; dining <span>₹7,200 / ₹10,000</span></p><i style="--w:72%"></i></div>
+            <div><p>Shopping <span>₹4,500 / ₹10,000</span></p><i style="--w:45%"></i></div>
+            <div class="warn"><p>Travel <span>₹8,400 / ₹10,000</span></p><i style="--w:84%"></i></div>
+          </div>
+          <div class="ex__card ex__emi"><small>NEXT EMI</small><b>₹8,450 · due 5 Oct</b><span>Phone EMI · 4 of 12 paid</span></div>`;
     },
 
     insights() {
@@ -69,7 +83,12 @@ window.OZ_MOCKUPS = {
           <div class="ex__card">
             <small>RECENT TRANSACTIONS</small>
             <ul class="ex__tx">${tx}</ul>
-          </div>`;
+          </div>
+          <div class="ex__card">
+            <small>TOP MERCHANTS</small>
+            <ul class="ex__legend"><li>Amazon <b>₹9,840</b></li><li>Swiggy <b>₹3,120</b></li><li>Uber <b>₹2,460</b></li><li>BigBasket <b>₹1,980</b></li></ul>
+          </div>
+          <div class="ex__ai"><b>✦ Ask Expensio AI</b><span>“How much did I spend on food this month?”</span></div>`;
     },
   },
 
@@ -117,7 +136,21 @@ window.OZ_MOCKUPS = {
             <i></i>
             <div><small>09:00 pm</small><b>Novastat - Rosuvastatin</b><em>1 tablet · after dinner</em></div>
             <span class="sd__add">+ Add</span>
-          </div>`;
+          </div>
+          <div class="sd__dose sd__dose--taken">
+            <i></i>
+            <div><small>08:00 am</small><b>Metformin - 500</b><em>Taken at 8:04 am</em></div>
+            <span class="sd__ok">✓</span>
+          </div>
+          <div class="sd__dose sd__dose--taken">
+            <i></i>
+            <div><small>08:00 am</small><b>Vitamin D3</b><em>Taken at 8:05 am</em></div>
+            <span class="sd__ok">✓</span>
+          </div>
+          <div class="sd__label">Upcoming appointments</div>
+          <div class="sd__appt"><b>12</b><div><strong>Dr. Mehta · Diabetology</strong><small>Fri, 12 Sep · 4:30 pm · City Clinic</small></div></div>
+          <div class="sd__appt"><b>18</b><div><strong>HbA1c blood test</strong><small>Thu, 18 Sep · 8:00 am · fasting</small></div></div>
+          <div class="sd__refill"><b>Refill soon</b><span>Sitagix - 100 · 6 tablets left</span></div>`;
     },
 
     adherence() {
@@ -137,7 +170,11 @@ window.OZ_MOCKUPS = {
             <div class="sd__month">‹ &nbsp;JUNE 2026&nbsp; ›</div>
             <div class="sd__grid"><em>S</em><em>M</em><em>T</em><em>W</em><em>T</em><em>F</em><em>S</em>${cells}</div>
           </div>
-          <div class="sd__legend"><span class="taken">Taken</span><span class="late">Delayed</span><span class="missed">Missed</span><span>None</span></div>`;
+          <div class="sd__legend"><span class="taken">Taken</span><span class="late">Delayed</span><span class="missed">Missed</span><span>None</span></div>
+          <div class="sd__label">Recent doses</div>
+          <div class="sd__dose sd__dose--taken"><i></i><div><small>Today · 08:00 am</small><b>Metformin - 500</b><em>Taken on time</em></div><span class="sd__ok">✓</span></div>
+          <div class="sd__dose sd__dose--taken"><i></i><div><small>Yesterday · 09:00 pm</small><b>Novastat - Rosuvastatin</b><em>Taken on time</em></div><span class="sd__ok">✓</span></div>
+          <div class="sd__dose"><i></i><div><small>5 June · 10:00 am</small><b>Sitagix - 100</b><em>Taken 45 min late</em></div><span class="sd__add">Late</span></div>`;
     },
   },
 
@@ -171,7 +208,13 @@ window.OZ_MOCKUPS = {
           <div class="td__label">Task Today!</div>
           ${task("Tablet – Weekly sync-up", "9:30 am – 10:00 am", '<span class="td__check td__check--orange">✓</span>', "is-done")}
           ${task("Vidal Insurance Query Submit", "10:30 am – 11:00 am", '<span class="td__check">✓</span>', "is-done")}
-          ${task('ZZZ-CAL-TEST <em>• LIVE</em>', "12:15 pm – 1:15 pm", '<span class="td__ring"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#2a2f22" stroke-width="2.5"/><circle cx="10" cy="10" r="8" fill="none" stroke="#c6f432" stroke-width="2.5" stroke-dasharray="21.6 50.3" stroke-linecap="round" transform="rotate(-90 10 10)"/></svg>43%</span>', "is-live")}`;
+          ${task('ZZZ-CAL-TEST <em>• LIVE</em>', "12:15 pm – 1:15 pm", '<span class="td__ring"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#2a2f22" stroke-width="2.5"/><circle cx="10" cy="10" r="8" fill="none" stroke="#c6f432" stroke-width="2.5" stroke-dasharray="21.6 50.3" stroke-linecap="round" transform="rotate(-90 10 10)"/></svg>43%</span>', "is-live")}
+          ${task("Doctor Consultation", "5:00 pm – 5:30 pm · Appointment", '<span class="td__open"></span>')}
+          ${task("C4C Mobile iOS Scrum Call", "9:00 pm – 9:30 pm · Meeting", '<span class="td__open"></span>')}
+          <div class="td__label">Upcoming</div>
+          ${task("CXM Mobile – Weekly Demo", "Fri, 18 Sep · 9:45 am · Meeting", '<span class="td__open"></span>')}
+          ${task("Renew car insurance", "Sat, 19 Sep · Personal", '<span class="td__open"></span>')}
+          ${task("Goa trip – book hotel", "Mon, 21 Sep · Trip", '<span class="td__open"></span>')}`;
     },
 
     analytics() {
@@ -198,7 +241,12 @@ window.OZ_MOCKUPS = {
             ${cat("Work", 36, 100, "#2dd4bf")}
             ${cat("Meeting", 21, 58, "#fb923c")}
             ${cat("Personal", 2, 6, "#f472b6")}
-          </ul>`;
+            ${cat("Appointment", 4, 11, "#a78bfa")}
+            ${cat("Trip", 3, 8, "#38bdf8")}
+            ${cat("General", 1, 3, "#c6f432")}
+          </ul>
+          <div class="td__label">Streak</div>
+          <div class="td__card td__streak"><b>6 days</b><small>Tasks completed every day this week</small></div>`;
     },
   },
 
@@ -240,7 +288,11 @@ window.OZ_MOCKUPS = {
           <div class="ds__label">Continue watching <em>See all</em></div>
           ${row(this.posters.slice(1, 4))}
           <div class="ds__label">Popular in Norway <em>See all</em></div>
-          ${row(this.posters.slice(3, 6))}`;
+          ${row(this.posters.slice(3, 6))}
+          <div class="ds__label">Documentaries <em>See all</em></div>
+          ${row([this.posters[4], this.posters[0], this.posters[2]])}
+          <div class="ds__label">New this week <em>See all</em></div>
+          ${row([this.posters[5], this.posters[1], this.posters[3]])}`;
     },
 
     detail() {
@@ -261,7 +313,9 @@ window.OZ_MOCKUPS = {
           <div class="ds__actions"><b>▶ Play</b><span>+ My List</span></div>
           <p class="ds__syn"><em>Synopsis:</em> A ferry pilot races the winter storm along the western fjords to bring her brother home before the roads close.</p>
           <p class="ds__credits"><em>Med:</em> Ingrid Solberg, Mats Haugen</p>
-          <p class="ds__credits"><em>Produksjon:</em> Vestland Film</p>`;
+          <p class="ds__credits"><em>Produksjon:</em> Vestland Film</p>
+          <div class="ds__label">More like this <em>See all</em></div>
+          <div class="ds__row">${[this.posters[0], this.posters[5], this.posters[2]].map((q) => this.poster(q)).join("")}</div>`;
     },
   },
 
@@ -287,6 +341,18 @@ window.OZ_MOCKUPS = {
             <div><small>SEC</small><span><i>−</i><i class="plus">+</i></span></div>
           </div>
           <div class="sc__actions"><i>↻</i><b>▶ Start</b></div>
+          <div class="sc__label">Quick workouts</div>
+          <div class="sc__presets">
+            <div><b>Tabata</b><small>8 × 20s / 10s</small></div>
+            <div><b>HIIT 30/30</b><small>10 rounds</small></div>
+            <div><b>Plank</b><small>3 × 60s</small></div>
+          </div>
+          <div class="sc__label">Recent sessions</div>
+          <ul class="sc__list">
+            <li><i>⇄</i><div><b>Leg day intervals</b><small>Today · 32:10</small></div><em>Done</em></li>
+            <li><i>◷</i><div><b>5K run</b><small>Yesterday · 26:48 · 5 laps</small></div><em>PB</em></li>
+            <li><i>⧗</i><div><b>Stretch timer</b><small>Mon · 10:00</small></div><em>Done</em></li>
+          </ul>
         </div>
       </div>`;
     },
@@ -311,6 +377,11 @@ window.OZ_MOCKUPS = {
           <div class="dl__reflect"><i>✦</i><b>Today’s Reflection</b><p>The pages are waiting for your thoughts. Take a moment to breathe and capture the essence of your day.</p></div>
           <span class="dl__cta">✎ Write Today’s Story</span>
           <div class="dl__streak"><i><svg viewBox="0 0 24 24"><path d="M12 2c1 4 6 6 6 12a6 6 0 01-12 0c0-3 2-5 3-6 0 2 1 3 2 3 0-4-1-6 1-9z" fill="#2b2412"/></svg></i><div><b>5 day streak</b><small>Keep the pages turning tonight</small></div></div>
+          <div class="dl__rewind"><small>MEMORY REWIND · 1 YEAR AGO</small><b>First day at the new studio</b><p>“Nervous and excited. The light through the window made everything feel possible…”</p></div>
+          <div class="dl__section">Recent entries</div>
+          <div class="dl__entry"><span>24<small>SEP</small></span><div><b>A quiet Sunday</b><p>Long walk, finished the book, called Maa.</p></div><em>Great</em></div>
+          <div class="dl__entry"><span>23<small>SEP</small></span><div><b>Deadline day</b><p>Shipped it. Tired but proud of the team.</p></div><em>Good</em></div>
+          <div class="dl__entry"><span>22<small>SEP</small></span><div><b>Rainy evening</b><p>Chai, old songs and an early night.</p></div><em>Okay</em></div>
           <div class="dl__nav"><span class="on">Home</span><span>Diary</span><span>Insights</span><span>Mood</span><span>Profile</span></div>
         </div>
       </div>`;
@@ -342,6 +413,18 @@ window.OZ_MOCKUPS = {
             ${row("LPG Cylinder", "Refill expected next week", "gas", gas)}
             ${row("Automations", "Rules that remember things", "auto", bolt)}
           </ul>
+          <div class="el__label"><b>Coming up</b><em>See all</em></div>
+          <ul class="el__list">
+            ${row("Car service", "Due in 12 days · 9,850 km", "car", car)}
+            ${row("LPG refill", "Expected Tue, 30 Sep", "gas", gas)}
+            ${row("Milk & bread", "Grocery restock · tomorrow", "auto", bolt)}
+            ${row("Electricity meter", "Monthly reading · 1 Oct", "auto", bolt)}
+          </ul>
+          <div class="el__label"><b>Recent logs</b><em>See all</em></div>
+          <ul class="el__list">
+            ${row("Fuel · Family Car", "₹2,400 · 23.4 L · 42,118 km", "car", car)}
+            ${row("LPG delivered", "₹903 · 14.2 kg cylinder", "gas", gas)}
+          </ul>
           <span class="el__fab">+ Add log</span>
           <div class="el__nav"><span class="on">Home</span><span>Trackers</span><span>Reminders</span><span>Settings</span></div>
         </div>
@@ -359,6 +442,8 @@ window.OZ_MOCKUPS = {
       { t: "Byen sover", d: "Kortfilm om nattarbeidere i Oslo sentrum.", g: "linear-gradient(160deg,#7c3aed,#160d2b 70%)" },
       { t: "Siste tog", d: "En pendler og en konduktør på nattoget mot Bergen.", g: "linear-gradient(160deg,#eab308,#3a2a05 70%)" },
       { t: "Fjellet", d: "Arkitektur og natur møtes i en hytte over tregrensen.", g: "linear-gradient(160deg,#64748b,#111827 70%)" },
+      { t: "Lysår", d: "En ungdomsskoleklasse lager sin første film sammen.", g: "linear-gradient(160deg,#db2777,#2a0a1a 70%)" },
+      { t: "Stille vann", d: "Dokumentar om livet ved Mjøsa gjennom fire årstider.", g: "linear-gradient(160deg,#0d9488,#062421 70%)" },
     ],
 
     phone(alt = false) {
@@ -382,17 +467,20 @@ window.OZ_MOCKUPS = {
           <div class="fb__label">NYHETER <em>Se alt</em></div>
           <div class="fb__row">${this.films.slice(1, 4).map(card).join("")}</div>
           <div class="fb__label">ARKITEKTER OG ARKITEKTUR <em>Se alt</em></div>
-          <div class="fb__row">${this.films.slice(3, 6).map(card).join("")}</div>`;
+          <div class="fb__row">${this.films.slice(3, 6).map(card).join("")}</div>
+          <div class="fb__label">KORTFILM <em>Se alt</em></div>
+          <div class="fb__row">${[this.films[6], this.films[2], this.films[4]].map(card).join("")}</div>
+          <div class="fb__label">DOKUMENTAR <em>Se alt</em></div>
+          <div class="fb__row">${[this.films[7], this.films[1], this.films[0]].map(card).join("")}</div>`;
     },
 
     search() {
       const rows = this.films
-        .slice(0, 5)
         .map((f) => `<li><div class="fb__thumb" style="background:${f.g}"></div><div><b>${f.t}</b><small>${f.d}</small></div><i></i></li>`)
         .join("");
       return `
           <div class="fb__bar"><i class="fb__back"></i><div class="fb__field">Søk etter filmer</div></div>
-          <div class="fb__count">5 treff</div>
+          <div class="fb__count">${this.films.length} treff</div>
           <ul class="fb__results">${rows}</ul>`;
     },
   },

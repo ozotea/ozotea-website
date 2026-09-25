@@ -1308,3 +1308,72 @@ body.modal-open { overflow: hidden; }
 }
 .legal__contact address { font-style: normal; color: var(--text-2); }
 .legal__contact code { font-family: var(--mono); font-size: 14px; color: var(--text-2); }
+
+/* =========================================================
+   Scrollable phone screens (Work, Upcoming, case-study modal)
+   ========================================================= */
+.phone__scroll {
+  flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; gap: inherit;
+  margin: 0 -14px; padding: 0 14px 18px; overflow-y: auto; overflow-x: hidden;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-y: auto;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+}
+.phone__scroll::-webkit-scrollbar { display: none; }
+.phone__scroll > * { flex-shrink: 0; }
+.phone__screen:has(> .phone__scroll) { overflow: hidden; }
+.phone__screen:has(> .phone__scroll) > [class$="__nav"], .phone__screen:has(> .phone__scroll) > .ps__tabbar { flex-shrink: 0; margin-top: 0; }
+.el__fab { position: absolute; right: 14px; bottom: 44px; z-index: 2; margin: 0; }
+
+/* Expensio extras */
+.ex__budgets { display: grid; gap: 9px; }
+.ex__budgets p { display: flex; justify-content: space-between; font-size: 9.5px; margin-bottom: 4px; }
+.ex__budgets p span { color: #7a8aa5; font-size: 8.5px; }
+.ex__budgets i { display: block; height: 5px; border-radius: 5px; background: linear-gradient(#2563eb, #2563eb) left / var(--w) 100% no-repeat, #1d2a44; }
+.ex__budgets .warn i { background: linear-gradient(#f59e0b, #f59e0b) left / var(--w) 100% no-repeat, #1d2a44; }
+.ex__emi b { display: block; font-size: 13px; margin: 2px 0; }
+.ex__emi span { font-size: 8.5px; color: #7a8aa5; }
+
+/* Silent Dose extras */
+.sd__dose--taken > i { border-color: #14b8a6; background: #14b8a6; }
+.sd__ok { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 10px; color: #04201d; background: #2dd4bf; }
+.sd__appt { display: flex; align-items: center; gap: 10px; padding: 9px; border-radius: 12px; background: #0e1f1e; border: 1px solid #16302e; }
+.sd__appt > b { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-size: 12px; color: #99f6e4; background: rgba(20,184,166,0.16); flex: none; }
+.sd__appt strong { display: block; font-size: 10px; }
+.sd__appt small { font-size: 8px; color: #6f9a97; }
+.sd__refill { padding: 9px 11px; border-radius: 12px; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.3); }
+.sd__refill b { display: block; font-size: 10px; color: #fcd34d; }
+.sd__refill span { font-size: 8.5px; color: #e5d3a1; }
+
+/* ToDo extras */
+.td__open { width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid #5b5e55; flex: none; }
+.td__streak b { display: block; font-size: 18px; color: #c6f432; letter-spacing: -0.02em; }
+.td__streak small { font-size: 8px; color: #8b8d85; }
+
+/* Sport Clocky extras */
+.sc__label { font-size: 10.5px; font-weight: 600; color: #cfe9ef; }
+.sc__presets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.sc__presets div { padding: 8px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+.sc__presets b { display: block; font-size: 9.5px; color: #22d3ee; }
+.sc__presets small { font-size: 7.5px; color: #9fb3b9; }
+.sc__list { display: grid; gap: 6px; }
+.sc__list li { display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+.sc__list i { width: 24px; height: 24px; border-radius: 8px; display: grid; place-items: center; font-style: normal; font-size: 11px; color: #22d3ee; background: rgba(34,211,238,0.12); flex: none; }
+.sc__list div { flex: 1; min-width: 0; }
+.sc__list b { display: block; font-size: 9.5px; }
+.sc__list small { font-size: 7.5px; color: #9fb3b9; }
+.sc__list em { font-style: normal; font-size: 8px; color: #22d3ee; }
+
+/* Day Leaf extras */
+.dl__rewind { padding: 11px; border-radius: 14px; text-align: left; color: #3a2e12; background: linear-gradient(145deg, #f6e7bf, #f1dca3); }
+.dl__rewind small { font-size: 7px; letter-spacing: 0.08em; color: #8a6a14; }
+.dl__rewind b { display: block; font-family: "Iowan Old Style", Georgia, serif; font-size: 11.5px; margin: 3px 0; }
+.dl__rewind p { font-family: "Iowan Old Style", Georgia, serif; font-style: italic; font-size: 9px; line-height: 1.45; }
+.dl__section { text-align: left; font-family: "Iowan Old Style", Georgia, serif; font-size: 12px; font-weight: 700; }
+.dl__entry { display: flex; align-items: center; gap: 9px; padding: 9px; border-radius: 12px; background: #fff; text-align: left; }
+.dl__entry > span { width: 30px; flex: none; display: flex; flex-direction: column; align-items: center; font-size: 13px; font-weight: 700; color: #b8860b; line-height: 1; }
+.dl__entry > span small { font-size: 6.5px; letter-spacing: 0.08em; color: #8a7a55; margin-top: 2px; }
+.dl__entry div { flex: 1; min-width: 0; }
+.dl__entry b { display: block; font-family: "Iowan Old Style", Georgia, serif; font-size: 10.5px; }
+.dl__entry p { font-size: 8px; color: #6b7280; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dl__entry em { font-style: normal; font-size: 7.5px; font-weight: 600; color: #b8860b; background: #f6ecd2; padding: 2px 6px; border-radius: 999px; }

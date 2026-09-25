@@ -37,6 +37,19 @@
       </div>`;
   }
 
+  // Make a phone screen scroll like a real app: everything except the
+  // bottom tab bar / floating button moves into a scrollable area.
+  function makeScrollable(root) {
+    $$(".phone__screen", root).forEach((screen) => {
+      if ($(":scope > .phone__scroll", screen)) return;
+      const fixed = (el) => /(__nav|__fab|__tabbar)\b/.test(el.className);
+      const scroll = document.createElement("div");
+      scroll.className = "phone__scroll";
+      [...screen.children].filter((el) => !fixed(el)).forEach((el) => scroll.append(el));
+      screen.prepend(scroll);
+    });
+  }
+
   // Hero phones
   $$(".hero__visual [data-screen]").forEach((el) => {
     const p = projects.find((x) => x.id === el.dataset.screen);
@@ -135,6 +148,7 @@
       panel.setAttribute("aria-labelledby", `${prefix}-${p.id}`);
       panel.style.cssText = `--c1:${p.color};--c2:${p.color2}`;
       panel.innerHTML = render(p, i);
+      makeScrollable(panel);
     };
     const restart = () => {
       clearInterval(timer);
@@ -238,6 +252,7 @@
           ${linksHTML(p)}
         </div>
       </div>`;
+    makeScrollable(modalBody);
     modal.showModal();
     document.body.classList.add("modal-open");
     modal.scrollTop = 0;
