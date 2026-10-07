@@ -319,7 +319,7 @@ window.OZ_MOCKUPS = {
     },
   },
 
-  // Sport Clocky (upcoming), recreated from the app's Timer screen
+  // Sport Clocky, recreated from the app's Timer screen
   // in its default "Midnight Carbon" theme.
   sportclocky: {
     phone() {
