@@ -105,36 +105,6 @@ window.OZ_DATA = {
       color2: "#8b5cf6",
     },
     {
-      id: "sportclocky",
-      name: "Sport Clocky",
-      badge: "Our own product",
-      category: "Sports & Fitness · Workout timer",
-      headline: "A neon workout timer that keeps counting with the screen off",
-      summary:
-        "Sport Clocky is a premium, AMOLED-first timing app for athletes and gym users. It brings a stopwatch, countdown timer and interval workouts together with voice coaching and glowing neon visuals, and stays accurate even with the screen off. It’s live on Android.",
-      platforms: ["Android"],
-      stack: ["Kotlin", "Jetpack Compose", "Material 3", "Hilt", "Room", "DataStore", "Jetpack Glance"],
-      features: [
-        "Stopwatch with laps, countdown timer and an interval builder for warm-up, sets, rest and cool-down",
-        "Stays accurate with the screen off, with Pause and Stop right in the notification",
-        "Voice coaching, sound cues and haptics: “3, 2, 1… Go!”",
-        "10 themes where colour, background artwork and lettering change together",
-        "Home-screen widget with 1, 5 and 10-minute quick starts",
-      ],
-      metrics: [
-        { value: "3", label: "Timer modes" },
-        { value: "10", label: "Neon themes" },
-        { value: "1·5·10", label: "Minute widget quick starts" },
-      ],
-      links: [
-        { label: "Get it on Google Play", url: "https://play.google.com/store/apps/details?id=com.ozoteaapps.sportclocky" },
-      ],
-      logo: "assets/sportclocky/icon.png",
-      mockup: "sportclocky",
-      color: "#22d3ee",
-      color2: "#0891b2",
-    },
-    {
       id: "dspree",
       name: "dSpree",
       badge: "Client · Pixlo AB, Norway",
@@ -213,6 +183,27 @@ window.OZ_DATA = {
   // }
   // Optional extras: highlights (list), stack (chips), mockup (key in mockups.js).
   upcoming: [
+    {
+      id: "sportclocky",
+      name: "Sport Clocky",
+      color: "#22d3ee",
+      color2: "#0891b2",
+      category: "Sports & Fitness · Workout timer",
+      summary:
+        "A premium, AMOLED-first timing app for athletes and gym users, with a stopwatch, countdown timer and interval workouts, voice coaching and glowing neon visuals.",
+      platforms: ["Android"],
+      status: "Beta testing",
+      progress: 85,
+      highlights: [
+        "Stopwatch with laps, countdown timer and an interval builder for warm-up, sets, rest and cool-down",
+        "Stays accurate with the screen off, with Pause and Stop right in the notification",
+        "Voice coaching, sound cues and haptics: “3, 2, 1… Go!”",
+        "10 themes where colour, background artwork and lettering change together",
+        "Home-screen widget with 1, 5 and 10-minute quick starts",
+      ],
+      stack: ["Kotlin", "Jetpack Compose", "Material 3", "Hilt", "Room", "DataStore", "Jetpack Glance"],
+      mockup: "sportclocky",
+    },
     {
       id: "dayleaf",
       name: "Day Leaf",
