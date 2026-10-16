@@ -13,7 +13,7 @@
   bar.innerHTML = `
     <p><strong>No tracking cookies here.</strong> We count visits anonymously with Cloudflare Web Analytics, which doesn’t use cookies.</p>
     <div class="consent__actions">
-      <a href="cookies.html" class="consent__link">Cookie policy</a>
+      <a href="/cookies.html" class="consent__link">Cookie policy</a>
       <button type="button" class="btn btn--primary btn--sm consent__accept">Accept</button>
     </div>`;
   document.body.append(bar);
