@@ -42,12 +42,12 @@ window.OZ_DATA = {
     },
     {
       id: "silentdose",
-      name: "Silent Dose",
+      name: "WellChapter",
       badge: "Our own product",
       category: "Healthcare · Medicine reminders",
       headline: "Medicine and appointment reminders that make sure no dose is missed",
       summary:
-        "Silent Dose is a simple, privacy-first reminder app for medicines, doctor visits and health checkups. It works fully offline with no account, and its large buttons and clear layout make it easy for seniors, caregivers and families. It’s live on Android phones, tablets and Wear OS watches, and the iPhone app is coming soon.",
+        "WellChapter (formerly Silent Dose) is a simple, privacy-first reminder app for medicines, doctor visits and health checkups. It works fully offline with no account, and its large buttons and clear layout make it easy for seniors, caregivers and families. It’s live on Android phones, tablets and Wear OS watches, and the iPhone app is coming soon.",
       platforms: ["Android", "Android Tablet", "Wear OS"],
       comingSoon: ["iPhone"],
       stack: ["Kotlin", "Jetpack Compose", "Wear OS", "Material 3", "Room", "AlarmManager", "Swift", "SwiftUI"],
@@ -65,9 +65,10 @@ window.OZ_DATA = {
         { value: "3", label: "Dose states tracked" },
       ],
       links: [
+        { label: "ozotea.com/wellchapter", url: "wellchapter/" },
         { label: "Get it on Google Play", url: "https://play.google.com/store/apps/details?id=com.ozoteaapps.silentdose" },
       ],
-      logo: "assets/silentdose/icon.png",
+      logo: "assets/wellchapter/icon.png",
       mockup: "silentdose",
       color: "#14b8a6",
       color2: "#0f766e",

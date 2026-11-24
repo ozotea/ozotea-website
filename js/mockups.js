@@ -92,7 +92,7 @@ window.OZ_MOCKUPS = {
     },
   },
 
-  // Silent Dose, recreated in dark theme from the app's real screens.
+  // WellChapter (formerly Silent Dose), recreated in dark theme from the app's real screens.
   silentdose: {
     phone(alt = false) {
       const tabs = ["Dashboard", "", "", "", ""]
@@ -115,7 +115,7 @@ window.OZ_MOCKUPS = {
         .map(([d, n]) => `<span${n === 10 ? ' class="on"' : ""}><small>${d}</small>${n}</span>`)
         .join("");
       return `
-          <div class="sd__head"><b>Silent Dose</b><i class="sd__bell"></i></div>
+          <div class="sd__head"><b>WellChapter</b><i class="sd__bell"></i></div>
           <div class="sd__profile">
             <div class="sd__who"><span class="sd__pic"></span><div><b>Soumya</b><small>Male | 39 yr</small></div></div>
             <div class="sd__vitals">
